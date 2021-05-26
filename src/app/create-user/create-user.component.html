@@ -1,0 +1,67 @@
+
+<div class="order">
+<h3>
+Online Order
+</h3>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control" required>
+    </div>
+  
+    <div class="mb-3">
+      <label>Phone Number</label>
+      <input type="text" formControlName="phone" class="form-control" required>
+    </div>
+
+    <div>
+      <label>Select Coffee:</label>
+        <select name="coffee" formControlName="coffee" id="coffee" class="form-control" required>
+        <option value="none" selected disabled hidden>
+        </option>
+        <option value="Brew">Brewed Coffee</option>
+        <option value="Americano">Americano</option>
+        <option value="Cappuccino">Cappuccino</option>
+        <option value="Espresso">Espresso</option>
+        <option value="Flat White">Flat White</option>
+        <option value="Caramel Macchiato">Caramel Macchiato</option>
+        <option value="White Chocolate Mocha">White Chocolate Mocha</option>
+        <option value="Lavendar Latte">Lavendar Latte</option>
+        <option value="Mint Mocha">Mint Mocha</option>
+        <option value="Chai Latte">Chai Latte</option>
+        <option value="Nitro">Nitro Cold Brew (only available cold)</option>
+        </select>
+    </div>
+  <br>
+  <div>
+    <label>Select Size:</label>
+      <select name="size" formControlName="size" id="size" class="form-control" required>
+        <option value="none" selected disabled hidden>
+          Select Your Size
+      </option>
+        <option value="Tall">Tall</option>
+        <option value="Grande">Grande</option>
+        <option value="Venti">Venti</option>
+        <option value="Trenta">Trenta</option>
+      </select>
+  </div>
+<br>
+<div>
+  <div>
+    <label>Select Your Temperature:</label><br>
+    <input type="radio" formControlName="temp" id="hot" name="temp" value="Hot" required="required">
+    <label>Hot</label><br>
+    <input type="radio" formControlName="temp" id="iced" name="temp" value="Iced">
+    <label>Iced</label><br>
+    <input type="radio" formControlName="temp" id="no_ice" name="temp" value="No Ice">
+    <label>Cold-No Ice</label><br>
+    <input type="radio" formControlName="temp" id="warm" name="temp" value="Warm">
+    <label>Warm-Kid Friendly</label><br>
+  </div>
+<br>
+</div>
+    <div class="mb-4">
+      <button type="submit" class="btn btn-primary create" [disabled]="!userForm.valid">Create</button>
+    </div>
+  </form>
+</div>

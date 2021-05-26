@@ -1,0 +1,66 @@
+<h3>
+  Update Order
+  </h3>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control" required>
+    </div>
+  
+    <div class="mb-3">
+      <label>Phone</label>
+      <input type="text" formControlName="phone" class="form-control" required>
+    </div>
+
+    <div>
+      <label>Select Coffee:</label>
+        <select name="coffee" id="coffee" class="form-control" required>
+        <option value="none" selected disabled hidden>
+            Select Your Coffee
+        </option>
+        <option value="volvo">Brewed Coffee</option>
+        <option value="saab">Americano</option>
+        <option value="mercedes">Cappuccino</option>
+        <option value="audi">Espresso</option>
+        <option value="volvo">Flat White</option>
+        <option value="saab">Caramel Macchiato</option>
+        <option value="mercedes">White Chocolate Mocha</option>
+        <option value="audi">Lavendar Latte</option>
+        <option value="volvo">Mint Mocha</option>
+        <option value="saab">Chai Latte</option>
+        <option value="mercedes">Nitro Cold Brew (only available cold)</option>
+        </select>
+    </div>
+  <br>
+  <div>
+    <label>Select Size:</label>
+      <select name="size" id="coffee" class="form-control" required>
+        <option value="none" selected disabled hidden>
+          Select Your Size
+      </option>
+        <option value="tall">Tall</option>
+        <option value="grande">Grande</option>
+        <option value="venti">Venti</option>
+        <option value="trenta">Trenta</option>
+      </select>
+  </div>
+<br>
+<div>
+  <div>
+    <label>Select Your Temperature:</label><br>
+    <input type="radio" id="hot" name="temp" value="hot" required="required">
+    <label>Hot</label><br>
+    <input type="radio" id="iced" name="temp" value="iced">
+    <label>Iced</label><br>
+    <input type="radio" id="no_ice" name="temp" value="no_ice">
+    <label>Cold-No Ice</label><br>
+    <input type="radio" id="warm" name="temp" value="hot">
+    <label>Warm-Kid Friendly</label><br>
+  </div>
+<br>
+</div>
+  
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+  </form>

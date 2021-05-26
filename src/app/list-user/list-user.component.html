@@ -1,0 +1,30 @@
+<h3>
+  Current Orders
+  </h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Coffee</th>
+        <th scope="col">Size</th>
+        <th scope="col">Temperature</th>
+        <th scope="col">Action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.coffee }}</td>
+        <td>{{ user.size }}</td>
+        <td>{{ user.temp }}</td>
+        <td>
+          <span (click)="removeUser(user)" class="text-danger">Delete</span> &nbsp;
+          <span routerLink="/update-user/{{user.id}}" class="text-primary">Edit</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
